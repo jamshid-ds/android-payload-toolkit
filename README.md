@@ -310,8 +310,5 @@ This tool is for educational and development purposes only. Always respect devic
 
 ## 📞 Contact
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Issues: [GitHub Issues](https://github.com/yourusername/android-payload-toolkit/issues)
-
----
-Made with ❤️ for the Android development community
+- GitHub: [@yourusername](https://github.com/jamshid-ds)
+- Issues: [GitHub Issues](https://github.com/jamshid-ds/android-payload-toolkit/issues)
