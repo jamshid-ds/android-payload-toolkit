@@ -2,7 +2,7 @@
 
 [![Go Version](https://img.shields.io/badge/Go-1.18+-00ADD8?style=flat&logo=go)](https://go.dev/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Windows-green)](https://github.com/yourusername/android-payload-toolkit)
+[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Windows-green)](https://github.com/jamshid-ds/android-payload-toolkit)
 
 A powerful Go toolkit for working with Android OTA payload.bin files. Extract partitions from OTA updates or create custom payload.bin files for Android devices.
 
@@ -56,7 +56,7 @@ Download and install from [XZ Utils official site](https://tukaani.org/xz/)
 
 ### Download Binary
 
-Download the latest release for your platform from [Releases](https://github.com/yourusername/android-payload-toolkit/releases)
+Download the latest release for your platform from [Releases](https://github.com/jamshid-ds/android-payload-toolkit/releases)
 
 ### Or Build from Source
 
