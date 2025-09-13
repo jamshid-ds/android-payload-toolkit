@@ -8,7 +8,7 @@ import (
 	"os"
 
 	"google.golang.org/protobuf/proto"
-	"github.com/yourusername/android-payload-toolkit/chromeos_update_engine"
+	"github.com/jamshid-ds/android-payload-toolkit/chromeos_update_engine"
 )
 
 type PayloadBuilder struct {

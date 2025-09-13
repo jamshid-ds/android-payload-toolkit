@@ -1,4 +1,4 @@
-module github.com/yourusername/android-payload-toolkit
+module github.com/jamshid-ds/android-payload-toolkit
 
 go 1.18
 

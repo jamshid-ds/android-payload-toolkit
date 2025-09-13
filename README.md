@@ -2,7 +2,7 @@
 
 [![Go Version](https://img.shields.io/badge/Go-1.18+-00ADD8?style=flat&logo=go)](https://go.dev/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Windows-green)](https://github.com/yourusername/android-payload-toolkit)
+[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Windows-green)](https://github.com/jamshid-ds/android-payload-toolkit)
 
 A powerful Go toolkit for working with Android OTA payload.bin files. Extract partitions from OTA updates or create custom payload.bin files for Android devices.
 
@@ -56,12 +56,12 @@ Download and install from [XZ Utils official site](https://tukaani.org/xz/)
 
 ### Download Binary
 
-Download the latest release for your platform from [Releases](https://github.com/yourusername/android-payload-toolkit/releases)
+Download the latest release for your platform from [Releases](https://github.com/jamshid-ds/android-payload-toolkit/releases)
 
 ### Or Build from Source
 
 ```bash
-git clone https://github.com/yourusername/android-payload-toolkit.git
+git clone https://github.com/jamshid-ds/android-payload-toolkit.git
 cd android-payload-toolkit
 go build -o android-payload-toolkit .
 ```
@@ -79,6 +79,10 @@ go build -o android-payload-toolkit .
 
 ### Create payload.bin from images
 ```bash
+# Method 1: Auto-detect from directory
+./android-payload-toolkit build -input extracted/ -output custom_payload.bin
+
+# Method 2: Manual specification
 ./android-payload-toolkit build \
   -partitions boot:boot.img,system:system.img,vendor:vendor.img \
   -output custom_payload.bin
@@ -125,23 +129,33 @@ Create a new payload.bin file from partition images.
 ```
 
 #### Options:
-- `-partitions` : **Required** - Comma-separated list of partition:image pairs
+- `-input` : Input directory containing .img files (auto-detect all partitions)
+- `-partitions` : Comma-separated list of partition:image pairs (manual mode)
 - `-output` : Output payload file (default: payload.bin)
+
+**Note**: Use either `-input` OR `-partitions`, not both.
 
 #### Examples:
 
 ```bash
-# Create payload with boot and system
+# Auto-detect all images in directory (EASIEST!)
+./android-payload-toolkit build -input extracted_imgs/ -output payload.bin
+
+# Create payload with specific partitions
 ./android-payload-toolkit build \
   -partitions boot:boot.img,system:system.img \
   -output payload.bin
 
-# Create full OTA payload
+# Use full paths for partitions in different locations
 ./android-payload-toolkit build \
-  -partitions boot:boot.img,system:system.img,vendor:vendor.img,product:product.img,\
-system_ext:system_ext.img,odm:odm.img,recovery:recovery.img,dtbo:dtbo.img,\
-vbmeta:vbmeta.img,vbmeta_system:vbmeta_system.img \
-  -output full_ota.bin
+  -partitions boot:/home/user/boot_patched.img,\
+system:/mnt/android/system.img,\
+vendor:./vendor.img \
+  -output custom.bin
+
+# Create full OTA from extracted directory
+./android-payload-toolkit original.bin -o imgs/
+./android-payload-toolkit build -input imgs/ -output full_ota.bin
 ```
 
 ## 💡 Examples
@@ -259,7 +273,7 @@ Android OTA payload.bin files follow a specific structure:
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/android-payload-toolkit.git
+git clone https://github.com/jamshid-ds/android-payload-toolkit.git
 cd android-payload-toolkit
 
 # Install dependencies
@@ -310,8 +324,8 @@ This tool is for educational and development purposes only. Always respect devic
 
 ## 📞 Contact
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Issues: [GitHub Issues](https://github.com/yourusername/android-payload-toolkit/issues)
+- GitHub: [@jamshid-ds](https://github.com/jamshid-ds)
+- Issues: [GitHub Issues](https://github.com/jamshid-ds/android-payload-toolkit/issues)
 
 ---
 Made with ❤️ for the Android development community

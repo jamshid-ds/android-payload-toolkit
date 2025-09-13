@@ -248,5 +248,5 @@ Full payload sizes:
 ## Support
 
 For issues and questions:
-- GitHub Issues: [Report bugs](https://github.com/yourusername/android-payload-toolkit/issues)
-- Discussions: [Ask questions](https://github.com/yourusername/android-payload-toolkit/discussions)
+- GitHub Issues: [Report bugs](https://github.com/jamshid-ds/android-payload-toolkit/issues)
+- Discussions: [Ask questions](https://github.com/jamshid-ds/android-payload-toolkit/discussions)
